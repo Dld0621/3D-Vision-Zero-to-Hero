@@ -119,13 +119,13 @@ $${}^{F}T_{\mathrm{TCP}}=[R_y(90^\circ),(0,0,0.10)].$$
 
 Composition gives:
 
-$${}^{B}R_{\mathrm{TCP}}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad
-{}^{B}t_{\mathrm{TCP}}=\begin{bmatrix}0.40\\0.22\\0.16\end{bmatrix}.$$
+$${}^{B}R_{\mathrm{TCP}}=\begin{bmatrix}0&0&1\\\\1&0&0\\\\0&1&0\end{bmatrix},\quad
+{}^{B}t_{\mathrm{TCP}}=\begin{bmatrix}0.40\\\\0.22\\\\0.16\end{bmatrix}.$$
 
 After tool compensation:
 
-$${}^{B}R_F=\begin{bmatrix}1&0&0\\0&0&-1\\0&1&0\end{bmatrix},\quad
-{}^{B}t_F=\begin{bmatrix}0.40\\0.32\\0.16\end{bmatrix}.$$
+$${}^{B}R_F=\begin{bmatrix}1&0&0\\\\0&0&-1\\\\0&1&0\end{bmatrix},\quad
+{}^{B}t_F=\begin{bmatrix}0.40\\\\0.32\\\\0.16\end{bmatrix}.$$
 
 TCP local `+x` points along base `+y`. The tool offset also rotates, so the flange position is not obtained by subtracting 0.10 from the TCP's base-frame `z`. Check `T_B_F T_F_TCP = T_B_TCP`, `RᵀR=I`, and `det(R)=1`. This computes coordinates; it has not solved IK or checked collisions. [grasp_pose_demo.py](../../examples/grasp_pose_demo.py) and [rigid_transform_demo.py](../../examples/rigid_transform_demo.py) provide CPU exercises; the source defines each script's exact inputs.
 

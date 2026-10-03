@@ -119,13 +119,13 @@ $${}^{F}T_{\mathrm{TCP}}=[R_y(90^\circ),(0,0,0.10)].$$
 
 相乘得到：
 
-$${}^{B}R_{\mathrm{TCP}}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad
-{}^{B}t_{\mathrm{TCP}}=\begin{bmatrix}0.40\\0.22\\0.16\end{bmatrix}.$$
+$${}^{B}R_{\mathrm{TCP}}=\begin{bmatrix}0&0&1\\\\1&0&0\\\\0&1&0\end{bmatrix},\quad
+{}^{B}t_{\mathrm{TCP}}=\begin{bmatrix}0.40\\\\0.22\\\\0.16\end{bmatrix}.$$
 
 工具补偿后：
 
-$${}^{B}R_F=\begin{bmatrix}1&0&0\\0&0&-1\\0&1&0\end{bmatrix},\quad
-{}^{B}t_F=\begin{bmatrix}0.40\\0.32\\0.16\end{bmatrix}.$$
+$${}^{B}R_F=\begin{bmatrix}1&0&0\\\\0&0&-1\\\\0&1&0\end{bmatrix},\quad
+{}^{B}t_F=\begin{bmatrix}0.40\\\\0.32\\\\0.16\end{bmatrix}.$$
 
 注意 TCP 的局部 `+x` 在基座里是 `+y`；工具偏移也经旋转，因此法兰位置不能简单写成 TCP 的基座 `z` 减0.10。验算 `T_B_F T_F_TCP = T_B_TCP`，并检查 `RᵀR=I`、`det(R)=1`。这是坐标计算，尚未求逆运动学或验证碰撞。[grasp_pose_demo.py](../examples/grasp_pose_demo.py) 与 [rigid_transform_demo.py](../examples/rigid_transform_demo.py) 提供 CPU 练习；脚本具体数据以源码为准。
 

@@ -71,7 +71,7 @@ x       y       z       [可选：r g b、nx ny nz、时间、置信度]
 $$
 \phi(\mathbf x)=
 \begin{cases}
-+d(\mathbf x,\partial\Omega),&\mathbf x\text{ 在外部}\\
++d(\mathbf x,\partial\Omega),&\mathbf x\text{ 在外部}\\\\
 -d(\mathbf x,\partial\Omega),&\mathbf x\text{ 在内部}
 \end{cases}
 $$
@@ -101,14 +101,14 @@ $$
 读作“将 B 坐标下的点变到 A 坐标下”。对应齐次矩阵：
 
 $$
-T_{A\leftarrow B}=\begin{bmatrix}R&\mathbf t\\0&1\end{bmatrix},\qquad
-\begin{bmatrix}\mathbf p_A\\1\end{bmatrix}=T_{A\leftarrow B}\begin{bmatrix}\mathbf p_B\\1\end{bmatrix}
+T_{A\leftarrow B}=\begin{bmatrix}R&\mathbf t\\\\0&1\end{bmatrix},\qquad
+\begin{bmatrix}\mathbf p_A\\\\1\end{bmatrix}=T_{A\leftarrow B}\begin{bmatrix}\mathbf p_B\\\\1\end{bmatrix}
 $$
 
 连续变换时：$T_{A\leftarrow C}=T_{A\leftarrow B}T_{B\leftarrow C}$。从右向左作用；反向变换用逆矩阵，不是简单把平移取负：
 
 $$
-T^{-1}=\begin{bmatrix}R^\top&-R^\top\mathbf t\\0&1\end{bmatrix}
+T^{-1}=\begin{bmatrix}R^\top&-R^\top\mathbf t\\\\0&1\end{bmatrix}
 $$
 
 这里假设 $R$ 是旋转矩阵，即 $R^\top R=I$、$\det(R)=1$。若矩阵里含缩放或镜像，需要另外处理。
@@ -151,7 +151,7 @@ $$
 
 $u$ 是水平像素坐标，$v$ 是垂直像素坐标。$f_x,f_y$ 是以像素计的焦距；$c_x,c_y$ 是主点。无偏斜的内参矩阵为：
 
-$$K=\begin{bmatrix}f_x&0&c_x\\0&f_y&c_y\\0&0&1\end{bmatrix}$$
+$$K=\begin{bmatrix}f_x&0&c_x\\\\0&f_y&c_y\\\\0&0&1\end{bmatrix}$$
 
 组合写为 $Z_C[u,v,1]^\top=K[R\mid\mathbf t][X_W,Y_W,Z_W,1]^\top$。**内参**管“这台相机怎么投影”，**外参**管“它相对世界在哪”。只知道内参，不能获得世界坐标。
 

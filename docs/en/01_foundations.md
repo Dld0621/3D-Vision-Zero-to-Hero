@@ -71,7 +71,7 @@ This tutorial uses positive values outside the object, negative values inside, a
 $$
 \phi(\mathbf x)=
 \begin{cases}
-+d(\mathbf x,\partial\Omega),&\mathbf x\text{ is outside}\\
++d(\mathbf x,\partial\Omega),&\mathbf x\text{ is outside}\\\\
 -d(\mathbf x,\partial\Omega),&\mathbf x\text{ is inside}
 \end{cases}
 $$
@@ -101,14 +101,14 @@ $$
 Read this as “transform a point expressed in B into coordinates in A.” The corresponding homogeneous matrix is:
 
 $$
-T_{A\leftarrow B}=\begin{bmatrix}R&\mathbf t\\0&1\end{bmatrix},\qquad
-\begin{bmatrix}\mathbf p_A\\1\end{bmatrix}=T_{A\leftarrow B}\begin{bmatrix}\mathbf p_B\\1\end{bmatrix}
+T_{A\leftarrow B}=\begin{bmatrix}R&\mathbf t\\\\0&1\end{bmatrix},\qquad
+\begin{bmatrix}\mathbf p_A\\\\1\end{bmatrix}=T_{A\leftarrow B}\begin{bmatrix}\mathbf p_B\\\\1\end{bmatrix}
 $$
 
 For composed transforms, $T_{A\leftarrow C}=T_{A\leftarrow B}T_{B\leftarrow C}$. They act from right to left. The reverse transform uses the inverse matrix, not merely a negated translation:
 
 $$
-T^{-1}=\begin{bmatrix}R^\top&-R^\top\mathbf t\\0&1\end{bmatrix}
+T^{-1}=\begin{bmatrix}R^\top&-R^\top\mathbf t\\\\0&1\end{bmatrix}
 $$
 
 This assumes that $R$ is a rotation matrix: $R^\top R=I$ and $\det(R)=1$. Scaling or reflection within a matrix requires separate handling.
@@ -151,7 +151,7 @@ $$
 
 $u$ is the horizontal pixel coordinate and $v$ is the vertical pixel coordinate. $f_x,f_y$ are focal lengths in pixels; $c_x,c_y$ are the principal point. The intrinsic matrix without skew is:
 
-$$K=\begin{bmatrix}f_x&0&c_x\\0&f_y&c_y\\0&0&1\end{bmatrix}$$
+$$K=\begin{bmatrix}f_x&0&c_x\\\\0&f_y&c_y\\\\0&0&1\end{bmatrix}$$
 
 Combined, $Z_C[u,v,1]^\top=K[R\mid\mathbf t][X_W,Y_W,Z_W,1]^\top$. **Intrinsics** describe how the camera projects; **extrinsics** describe where it is relative to the world. Intrinsics alone do not give world coordinates.
 
