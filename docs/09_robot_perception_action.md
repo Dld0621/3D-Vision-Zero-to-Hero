@@ -46,13 +46,15 @@ flowchart TD
 
 `B` 是机器人基座，`C` 是相机，`O` 是物体，`F` 是法兰，`TCP` 是工具中心点。贯穿本章：**`T_A_B` 将 B 中的列向量坐标变到 A 中**，即 `p_A = T_A_B p_B`。位姿不是只有一个三维位置。
 
+为避免公式中的多词坐标系名称被误读，公式将同一变换写为“目标坐标系上标、来源坐标系下标”：例如公式里的 ${}^{B}T_{\mathrm{TCP}}$ 对应正文中的 `T_B_TCP`。
+
 ## 2 深度与 Mesh 怎样成为可用几何
 
 ### 2.1 先得到正确的观测点
 
 对已去畸变、深度为光轴方向 `z` 的针孔模型：
 
-$$z=d/s,\quad x=(u-c_x)z/f_x,\quad y=(v-c_y)z/f_y,\quad \bar p_B=T_{B\_C}\bar p_C.$$
+$$z=d/s,\quad x=(u-c_x)z/f_x,\quad y=(v-c_y)z/f_y,\quad \bar p_B={}^{B}T_C\bar p_C.$$
 
 这里 `s` 是每米包含的原始深度单位。Open3D 0.19.0 的 `create_from_depth_image` 使用这个深度反投影关系；该 API 的 `depth_scale` 是除数。把已经是米的深度再次除以1000会使场景缩小1000倍。不同数据格式可能把同名字段定义为乘数，应查原始协议。[Open3D 深度 API](https://www.open3d.org/docs/0.19.0/python_api/open3d.geometry.PointCloud.html#open3d.geometry.PointCloud.create_from_depth_image)、[BOP 深度格式](https://github.com/thodan/bop_toolkit/blob/master/docs/bop_datasets_format.md)
 
@@ -100,8 +102,8 @@ $$z=d/s,\quad x=(u-c_x)z/f_x,\quad y=(v-c_y)z/f_y,\quad \bar p_B=T_{B\_C}\bar p_
 
 感知给 `T_B_O`，候选给 `T_O_TCP`。工具标定给固定的 `T_F_TCP`：TCP 相对法兰的位置与方向。因此：
 
-$$T_{B\_TCP}=T_{B\_O}T_{O\_TCP},\qquad
-T_{B\_F}=T_{B\_TCP}(T_{F\_TCP})^{-1}.$$
+$${}^{B}T_{\mathrm{TCP}}={}^{B}T_O\,{}^{O}T_{\mathrm{TCP}},\qquad
+{}^{B}T_F={}^{B}T_{\mathrm{TCP}}({}^{F}T_{\mathrm{TCP}})^{-1}.$$
 
 如果控制器已配置TCP并接收TCP目标，传 `T_B_TCP`；如果接口接收法兰目标，才用 `T_B_F`。先查目标 link/frame，避免应用工具补偿两次。逆矩阵为：
 
@@ -111,19 +113,19 @@ $$[R,t]^{-1}=[R^\top,-R^\top t].$$
 
 全部长度为米，旋转为右手主动旋转、作用于列向量。取：
 
-$$T_{B\_O}=[R_z(90^\circ),(0.40,0.20,0.10)],$$
-$$T_{O\_TCP}=[R_x(90^\circ),(0.02,0,0.06)],$$
-$$T_{F\_TCP}=[R_y(90^\circ),(0,0,0.10)].$$
+$${}^{B}T_O=[R_z(90^\circ),(0.40,0.20,0.10)],$$
+$${}^{O}T_{\mathrm{TCP}}=[R_x(90^\circ),(0.02,0,0.06)],$$
+$${}^{F}T_{\mathrm{TCP}}=[R_y(90^\circ),(0,0,0.10)].$$
 
 相乘得到：
 
-$$R_{B\_TCP}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad
-t_{B\_TCP}=\begin{bmatrix}0.40\\0.22\\0.16\end{bmatrix}.$$
+$${}^{B}R_{\mathrm{TCP}}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad
+{}^{B}t_{\mathrm{TCP}}=\begin{bmatrix}0.40\\0.22\\0.16\end{bmatrix}.$$
 
 工具补偿后：
 
-$$R_{B\_F}=\begin{bmatrix}1&0&0\\0&0&-1\\0&1&0\end{bmatrix},\quad
-t_{B\_F}=\begin{bmatrix}0.40\\0.32\\0.16\end{bmatrix}.$$
+$${}^{B}R_F=\begin{bmatrix}1&0&0\\0&0&-1\\0&1&0\end{bmatrix},\quad
+{}^{B}t_F=\begin{bmatrix}0.40\\0.32\\0.16\end{bmatrix}.$$
 
 注意 TCP 的局部 `+x` 在基座里是 `+y`；工具偏移也经旋转，因此法兰位置不能简单写成 TCP 的基座 `z` 减0.10。验算 `T_B_F T_F_TCP = T_B_TCP`，并检查 `RᵀR=I`、`det(R)=1`。这是坐标计算，尚未求逆运动学或验证碰撞。[grasp_pose_demo.py](../examples/grasp_pose_demo.py) 与 [rigid_transform_demo.py](../examples/rigid_transform_demo.py) 提供 CPU 练习；脚本具体数据以源码为准。
 

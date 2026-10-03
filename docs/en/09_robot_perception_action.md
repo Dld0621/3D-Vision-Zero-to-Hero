@@ -46,13 +46,15 @@ This diagram is the tutorial's own workflow design. The table proposes data cont
 
 `B` is the robot base, `C` the camera, `O` the object, `F` the flange, and `TCP` the tool centre point. Throughout this chapter, **`T_A_B` maps column-vector coordinates from B into A**: `p_A = T_A_B p_B`. A pose includes orientation as well as position.
 
+To keep frame names legible in equations, the destination frame is a superscript and the source frame a subscript: for example, ${}^{B}T_{\mathrm{TCP}}$ in an equation means `T_B_TCP` in the prose.
+
 ## 2 Turn depth and meshes into usable geometry
 
 ### 2.1 First obtain correct observed points
 
 For a distortion-corrected pinhole model with optical-axis depth `z`:
 
-$$z=d/s,\quad x=(u-c_x)z/f_x,\quad y=(v-c_y)z/f_y,\quad \bar p_B=T_{B\_C}\bar p_C.$$
+$$z=d/s,\quad x=(u-c_x)z/f_x,\quad y=(v-c_y)z/f_y,\quad \bar p_B={}^{B}T_C\bar p_C.$$
 
 Here `s` is the number of raw depth units per metre. Open3D 0.19.0's `create_from_depth_image` uses this back-projection relation; its `depth_scale` is a divisor. Dividing metre-valued depth by 1000 again shrinks the scene by 1000. Another format may define a similarly named field as a multiplier: check the original specification. [Open3D depth API](https://www.open3d.org/docs/0.19.0/python_api/open3d.geometry.PointCloud.html#open3d.geometry.PointCloud.create_from_depth_image), [BOP depth format](https://github.com/thodan/bop_toolkit/blob/master/docs/bop_datasets_format.md).
 
@@ -100,8 +102,8 @@ First reject unsuitable candidates using gripper opening and finger length. Then
 
 Perception supplies `T_B_O`; the candidate supplies `T_O_TCP`. Tool calibration supplies fixed `T_F_TCP`: the TCP's position and orientation relative to the flange. Therefore:
 
-$$T_{B\_TCP}=T_{B\_O}T_{O\_TCP},\qquad
-T_{B\_F}=T_{B\_TCP}(T_{F\_TCP})^{-1}.$$
+$${}^{B}T_{\mathrm{TCP}}={}^{B}T_O\,{}^{O}T_{\mathrm{TCP}},\qquad
+{}^{B}T_F={}^{B}T_{\mathrm{TCP}}({}^{F}T_{\mathrm{TCP}})^{-1}.$$
 
 If the controller already has the TCP configured and accepts TCP targets, send `T_B_TCP`. Use `T_B_F` when the interface accepts flange targets. Verify the target link/frame to avoid applying tool compensation twice. The inverse is:
 
@@ -111,19 +113,19 @@ $$[R,t]^{-1}=[R^\top,-R^\top t].$$
 
 Lengths are metres; rotations are right-handed active rotations acting on column vectors. Choose:
 
-$$T_{B\_O}=[R_z(90^\circ),(0.40,0.20,0.10)],$$
-$$T_{O\_TCP}=[R_x(90^\circ),(0.02,0,0.06)],$$
-$$T_{F\_TCP}=[R_y(90^\circ),(0,0,0.10)].$$
+$${}^{B}T_O=[R_z(90^\circ),(0.40,0.20,0.10)],$$
+$${}^{O}T_{\mathrm{TCP}}=[R_x(90^\circ),(0.02,0,0.06)],$$
+$${}^{F}T_{\mathrm{TCP}}=[R_y(90^\circ),(0,0,0.10)].$$
 
 Composition gives:
 
-$$R_{B\_TCP}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad
-t_{B\_TCP}=\begin{bmatrix}0.40\\0.22\\0.16\end{bmatrix}.$$
+$${}^{B}R_{\mathrm{TCP}}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix},\quad
+{}^{B}t_{\mathrm{TCP}}=\begin{bmatrix}0.40\\0.22\\0.16\end{bmatrix}.$$
 
 After tool compensation:
 
-$$R_{B\_F}=\begin{bmatrix}1&0&0\\0&0&-1\\0&1&0\end{bmatrix},\quad
-t_{B\_F}=\begin{bmatrix}0.40\\0.32\\0.16\end{bmatrix}.$$
+$${}^{B}R_F=\begin{bmatrix}1&0&0\\0&0&-1\\0&1&0\end{bmatrix},\quad
+{}^{B}t_F=\begin{bmatrix}0.40\\0.32\\0.16\end{bmatrix}.$$
 
 TCP local `+x` points along base `+y`. The tool offset also rotates, so the flange position is not obtained by subtracting 0.10 from the TCP's base-frame `z`. Check `T_B_F T_F_TCP = T_B_TCP`, `RᵀR=I`, and `det(R)=1`. This computes coordinates; it has not solved IK or checked collisions. [grasp_pose_demo.py](../../examples/grasp_pose_demo.py) and [rigid_transform_demo.py](../../examples/rigid_transform_demo.py) provide CPU exercises; the source defines each script's exact inputs.
 
