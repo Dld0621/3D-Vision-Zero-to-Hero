@@ -1,5 +1,7 @@
 # 07｜排错：先找错在哪一层，再改参数
 
+**简体中文** | [English](en/07_troubleshooting.md)
+
 > 软件细节核查日期：**2026-10-03**。下面是诊断路径与检查命令，不是宣称本仓库已在你的机器复现了这些错误。
 
 ```mermaid
@@ -144,3 +146,7 @@ hustvl 的通用 COLMAP loader 核查日以图像索引构造默认时间，它�
 不要公开令牌、私有服务器地址、含个人信息的图像/日志或未获授权的数据。报错应从第一个异常开始，而不是只截最后一句“构建失败”。若分享最小数据集，先确认照片与模型授权。
 
 回到：[操作工作流](06_workflows.md) · [3DGS 原理](04_nerf_3dgs.md) · [4DGS 原理](05_4dgs.md)
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)

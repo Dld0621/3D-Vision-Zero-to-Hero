@@ -1,5 +1,7 @@
 # 06｜从输入到验收：五条软件工作流
 
+**简体中文** | [English](en/06_workflows.md)
+
 > **验证边界：2026-10-03 核查官方文档与源码；以下安装、训练和 GPU 命令未在用户机器运行。没有本仓库实测的训练时间、显存峰值或质量 benchmark。**
 >
 > 路径均为公开教程的虚构示例。先在新的空工作目录操作，保留原图；不要把原始素材、模型权重和运行环境提交到 GitHub。代码分支会变化，运行时记录 commit、环境和本地 `--help`。
@@ -513,3 +515,7 @@ Python/PyTorch/关键依赖与配置：
 ```
 
 真实记录比“最新版 + 默认参数”更有复现价值。排错时从最早失败的一步查起：[07 排错](07_troubleshooting.md)。
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)

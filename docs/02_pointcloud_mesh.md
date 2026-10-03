@@ -1,5 +1,7 @@
 # 02 点云到 Mesh 的完整工作流
 
+**简体中文** | [English](en/02_pointcloud_mesh.md)
+
 [返回入口](../README.md) · 前置：[三维基础](01_foundations.md) · 下一章：[MANO 手部模型](03_mano_hand.md)
 
 **目标**：根据自己的输入选对路线，把数据采集、标定、配准、清洗、表面重建和验证连成一个可复查的过程。先跑一个无下载的小实验，再碰真实扫描。
@@ -16,7 +18,7 @@
 | Blender | 看表面、调整材质、布光、相机和动画 | 按官方硬件要求选择版本 | 5.x 要求 Apple Silicon；Intel Mac 查询 4.5 LTS | 适合建模与展示；渲染效果不是尺寸精度证明 |
 | COLMAP | 从重叠照片恢复相机和稀疏结构 | 按官方构建/发布说明 | 可做相应的受支持步骤 | 官方内置稠密重建涉及 CUDA 条件；不要以“Mac 有 GPU”推断能运行 |
 
-来源：[CloudCompare 官方项目](https://github.com/CloudCompare/CloudCompare)、[平台说明](https://www.cloudcompare.org/main.html)、[MeshLab 下载](https://www.meshlab.net/)、[Open3D 0.19.0 入门](https://www.open3d.org/docs/0.19.0/getting_started.html)、[Blender 硬件要求](https://www.blender.org/download/requirements/)、[COLMAP 无 CUDA 功能边界](https://colmap.github.io/faq.html#available-functionality-without-gpu-cuda)。
+来源：[CloudCompare 官方项目](https://github.com/CloudCompare/CloudCompare)、[平台说明](https://github.com/CloudCompare/CloudCompare#compilation)、[MeshLab 下载](https://www.meshlab.net/)、[Open3D 0.19.0 入门](https://www.open3d.org/docs/0.19.0/getting_started.html)、[Blender 硬件要求](https://www.blender.org/download/requirements/)、[COLMAP 无 CUDA 功能边界](https://colmap.github.io/faq.html#available-functionality-without-gpu-cuda)。
 
 **本章的软件组合建议**：手动观察先选 CloudCompare 或 MeshLab 其中一个；自动化用 Open3D；需要演示图再加入 Blender。拍照重建另学 COLMAP。Mac 完全可以学习点云/网格和 CPU 几何处理；CUDA 依赖的研究训练应单独评估，不能把 GPU 后端混为一谈。
 
@@ -259,3 +261,7 @@ Poisson 返回的 `density` 是重建中的支持密度量，不是传感器概�
 6. [MeshLab 官网](https://www.meshlab.net/)：当日下载区显示 2025.07，并列出 Windows/macOS 架构；软件升级后复核滤波器名称
 7. [Blender 硬件要求](https://www.blender.org/download/requirements/)：5.0 起 macOS 为 Apple Silicon；4.5 LTS 为最后支持 Intel Mac 的系列。具体系统/GPU要求按相应版本检查
 8. [COLMAP Tutorial](https://colmap.github.io/tutorial.html)、[FAQ](https://colmap.github.io/faq.html)：滚动文档，实际命令选项可能跨版本改变，本章不提供未经版本锁定的整套训练命令
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)

@@ -1,0 +1,18 @@
+<mujoco model="tracked_object_pose_example">
+  <!-- Illustrative model only. XML parsing does not validate MuJoCo semantics. -->
+  <compiler angle="radian"/>
+  <option gravity="0 0 -9.81" timestep="0.002"/>
+  <worldbody>
+    <light pos="0 0 2"/>
+    <geom name="floor" type="plane" size="2 2 0.1" rgba="0.8 0.8 0.8 1"/>
+    <!-- Mocap prescribes pose; this body is not a freely falling object. -->
+    <body name="tracked_object" mocap="true" pos="0.4 0.2 0.1">
+      <!-- Detailed appearance and simple collision shape have different roles. -->
+      <geom name="object_visual" type="ellipsoid" size="0.04 0.03 0.025"
+            rgba="0.2 0.5 0.9 1" contype="0" conaffinity="0" mass="0"/>
+      <geom name="object_collision" type="box" size="0.04 0.03 0.025"
+            rgba="0.9 0.4 0.2 0.25" contype="1" conaffinity="1" mass="0.1"/>
+      <site name="object_origin" size="0.005" rgba="1 0 0 1"/>
+    </body>
+  </worldbody>
+</mujoco>

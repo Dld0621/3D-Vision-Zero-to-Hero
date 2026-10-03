@@ -1,5 +1,7 @@
 # 04｜NeRF 与 3D Gaussian Splatting：如何把照片变成可换视角的场景
 
+**简体中文** | [English](en/04_nerf_3dgs.md)
+
 > 面向机械背景：先把它理解为“调很多参数，使渲染图像接近实拍图像”的逆问题。本文的软件信息于 **2026-10-03** 核查；公式是教学简化，不是对特定 CUDA 内核逐行复述。
 
 ## 1. 它们究竟要解决什么
@@ -171,3 +173,7 @@ GS 可以负责“机器人相机看到什么”；MuJoCo 等物理仿真还需�
 4. 想测量一个金属轴承直径，为什么高 PSNR 仍不够？写出你要增加的尺度和独立验证信息
 
 下一步：[4DGS](05_4dgs.md) · [实际操作配方](06_workflows.md) · [排错](07_troubleshooting.md)
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)

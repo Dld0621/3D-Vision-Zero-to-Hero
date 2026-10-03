@@ -1,5 +1,7 @@
 # 术语表 按问题查概念
 
+**简体中文** | [English](en/glossary.md)
+
 [返回入口](../README.md) · [基础](01_foundations.md) · [点云与 Mesh](02_pointcloud_mesh.md) · [MANO](03_mano_hand.md) · [3DGS](04_nerf_3dgs.md) · [4DGS](05_4dgs.md)
 
 **使用方式**：先看“它回答什么”，再去对应章节做练习。下列解释采用本教程约定，不能替代某个数据集或软件自己的字段定义。资料核验日期：**2026-10-03**。
@@ -112,3 +114,7 @@
 2. “已经重建成功”还不够：独立检查过尺度、几何和失败区域吗？
 3. “误差很小”还不够：以什么对齐方式、什么单位、对什么参考算的？
 4. “公开可下载”还不够：代码、数据、模型和输出分别受什么许可约束？
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)

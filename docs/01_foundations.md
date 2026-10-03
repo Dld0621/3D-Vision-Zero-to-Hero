@@ -1,5 +1,7 @@
 # 01 从机械直觉理解三维视觉
 
+**简体中文** | [English](en/01_foundations.md)
+
 [返回学习入口](../README.md) · 下一章：[点云与 Mesh](02_pointcloud_mesh.md) · [术语速查](glossary.md)
 
 **目标**：能说清一个三维文件记录了什么，能把一个深度像素变成三维点，能检查单位和坐标有没有弄反。暂时不需要神经网络，也不需要 GPU。
@@ -276,3 +278,7 @@ NumPy 数组包可用 `np.load(path, allow_pickle=False)` 后检查 `files` 和�
 4. NumPy 滚动官方文档：[savez](https://numpy.org/doc/stable/reference/generated/numpy.savez.html)、[load](https://numpy.org/doc/stable/reference/generated/numpy.load.html)。本章不依赖最新新增接口
 5. Stanford：[PLY 工具](https://graphics.stanford.edu/software/vrip/plyusage.html)、[扫描数据说明](https://graphics.stanford.edu/data/3Dscanrep/)
 6. Blender：[导入导出官方手册](https://docs.blender.org/manual/en/latest/files/import_export/index.html)。文件读写能力、法线/材质保留方式应在实际使用版本中验证
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)

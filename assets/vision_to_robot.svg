@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="610" viewBox="0 0 1440 610" role="img" aria-labelledby="title desc">
+<title id="title">从三维视觉到机器人 · From 3D vision to robot actions</title>
+<desc id="desc">采集、标定、感知、规划、验证五步流程，以及坐标时序、任务可行性和验证状态三个检查点。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#4a67a8"/></marker></defs>
+<rect width="1440" height="610" rx="20" fill="#f5f7fc"/>
+<g font-family="Arial, PingFang SC, sans-serif" fill="#172c50">
+<text x="42" y="50" font-size="28" font-weight="700">从三维视觉到机器人 · From 3D vision to robot actions</text>
+<text x="42" y="80" font-size="16" fill="#51617a">每个箭头都要传递坐标、单位、时间和质量信息 · Carry frames, units, time and quality at every step</text>
+<rect x="42" y="122" width="236" height="146" rx="12" fill="white" stroke="#b8c9e4"/>
+<rect x="42" y="122" width="236" height="44" rx="12" fill="#e3eaf7"/>
+<text x="56" y="151" font-size="19" font-weight="700">01 采集 / Capture</text>
+<text x="56" y="205" font-size="15">RGB-D · images · joints</text>
+<text x="56" y="236" font-size="15" fill="#51617a">图像 / 深度 / 关节</text>
+<line x1="284" y1="194" x2="311" y2="194" stroke="#4a67a8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="322" y="122" width="236" height="146" rx="12" fill="white" stroke="#b8c9e4"/>
+<rect x="322" y="122" width="236" height="44" rx="12" fill="#e3eaf7"/>
+<text x="336" y="151" font-size="19" font-weight="700">02 标定 / Calibrate</text>
+<text x="336" y="205" font-size="15">K · distortion · T · clock</text>
+<text x="336" y="236" font-size="15" fill="#51617a">内参 / 外参 / 时钟</text>
+<line x1="564" y1="194" x2="591" y2="194" stroke="#4a67a8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="602" y="122" width="236" height="146" rx="12" fill="white" stroke="#b8c9e4"/>
+<rect x="602" y="122" width="236" height="44" rx="12" fill="#e3eaf7"/>
+<text x="616" y="151" font-size="19" font-weight="700">03 感知 / Perceive</text>
+<text x="616" y="205" font-size="15">points · object pose · hand</text>
+<text x="616" y="236" font-size="15" fill="#51617a">点云 / 物体位姿 / 手</text>
+<line x1="844" y1="194" x2="871" y2="194" stroke="#4a67a8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="882" y="122" width="236" height="146" rx="12" fill="white" stroke="#b8c9e4"/>
+<rect x="882" y="122" width="236" height="44" rx="12" fill="#e3eaf7"/>
+<text x="896" y="151" font-size="19" font-weight="700">04 规划 / Plan</text>
+<text x="896" y="205" font-size="15">TCP target · IK · collision</text>
+<text x="896" y="236" font-size="15" fill="#51617a">工具目标 / IK / 碰撞</text>
+<line x1="1124" y1="194" x2="1151" y2="194" stroke="#4a67a8" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1162" y="122" width="236" height="146" rx="12" fill="white" stroke="#b8c9e4"/>
+<rect x="1162" y="122" width="236" height="44" rx="12" fill="#e3eaf7"/>
+<text x="1176" y="151" font-size="19" font-weight="700">05 验证 / Verify</text>
+<text x="1176" y="205" font-size="15">simulation · measured task</text>
+<text x="1176" y="236" font-size="15" fill="#51617a">仿真 / 任务实测</text>
+<path d="M1278 282 V307 H720" fill="none" stroke="#4a67a8" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="767" y="332" font-size="15" fill="#51617a">误差反馈 → 重新测量或修正 · Feedback → remeasure or revise</text>
+<rect x="42" y="366" width="420" height="200" rx="12" fill="white" stroke="#d1daeb"/>
+<text x="60" y="401" font-size="21" font-weight="700">输入检查 / Input checks</text>
+<text x="60" y="435" font-size="16" fill="#253f61">坐标方向、米、时间戳</text>
+<text x="60" y="466" font-size="14" fill="#5f708a">Frame direction, metres, timestamps</text>
+<text x="60" y="497" font-size="16" fill="#253f61">畸变、遮挡、置信度</text>
+<text x="60" y="528" font-size="14" fill="#5f708a">Distortion, occlusion, confidence</text>
+<rect x="510" y="366" width="420" height="200" rx="12" fill="white" stroke="#d1daeb"/>
+<text x="528" y="401" font-size="21" font-weight="700">动作检查 / Action checks</text>
+<text x="528" y="435" font-size="16" fill="#253f61">未知空间、对称性、碰撞余量</text>
+<text x="528" y="466" font-size="14" fill="#5f708a">Unknown space, symmetry, margins</text>
+<text x="528" y="497" font-size="16" fill="#253f61">可达性、整段轨迹、接触</text>
+<text x="528" y="528" font-size="14" fill="#5f708a">Reachability, swept path, contact</text>
+<rect x="978" y="366" width="420" height="200" rx="12" fill="white" stroke="#d1daeb"/>
+<text x="996" y="401" font-size="21" font-weight="700">证据边界 / Evidence limits</text>
+<text x="996" y="435" font-size="16" fill="#253f61">CPU 几何示例已运行</text>
+<text x="996" y="466" font-size="14" fill="#5f708a">CPU geometry examples executed</text>
+<text x="996" y="497" font-size="16" fill="#253f61">ROS / MuJoCo / GPU / 真机需独立验收</text>
+<text x="996" y="528" font-size="14" fill="#5f708a">Integration and hardware need separate tests</text>
+</g></svg>

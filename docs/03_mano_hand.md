@@ -1,5 +1,7 @@
 # 03 MANO 从参数到手部网格
 
+**简体中文** | [English](en/03_mano_hand.md)
+
 [返回入口](../README.md) · 前置：[坐标与相机](01_foundations.md) / [点云与 Mesh](02_pointcloud_mesh.md) · 后续：[NeRF 与 3DGS](04_nerf_3dgs.md)
 
 **一句话**：MANO 是一个学到的人手形状与姿态模型。给定手型、关节姿态和整体位姿，它生成拓扑固定的手部 Mesh；从照片估计这些参数，还需要另外的观测、预测器或拟合算法。
@@ -281,3 +283,7 @@ $$
 3. Hu 等，CVPR 2021，*Model-Aware Gesture-to-Gesture Translation*：[CVF 原论文](https://openaccess.thecvf.com/content/CVPR2021/papers/Hu_Model-Aware_Gesture-to-Gesture_Translation_CVPR_2021_paper.pdf)，核实标准 MANO 拓扑数目
 4. [MANO 模型/数据许可](https://mano.is.tue.mpg.de/license.html)、[smplx 代码许可](https://github.com/vchoutas/smplx/blob/main/LICENSE)。这里的说明不能替代许可原文；用途超出许可时需另行获得授权
 5. [NumPy 安全加载说明](https://numpy.org/doc/stable/reference/generated/numpy.load.html)。本练习的数值NPZ可用 `allow_pickle=False` 读取，官方模型PKL只应来自可信且许可允许的来源
+
+---
+
+[返回首页](../README.md) · [坐标与标定](08_robot_frames_calibration.md) · [机器人应用](09_robot_perception_action.md) · [ROS 2 / MuJoCo](10_ros2_mujoco.md)
