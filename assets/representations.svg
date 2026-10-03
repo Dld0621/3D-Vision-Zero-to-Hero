@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">点云、网格、三维高斯与动态高斯示意</title><desc id="desc">四个概念面板分别显示离散点、连接的三角形、半透明椭圆以及随时间移动的椭圆。这是合成示意，不是重建结果。</desc>
+<rect width="1200" height="330" rx="18" fill="#f6f8fc"/>
+<g font-family="Arial, sans-serif" fill="#172b4d">
+<rect x="15" y="15" width="270" height="290" rx="12" fill="white" stroke="#dfe5ee"/><text x="33" y="49" font-size="17" font-weight="bold">POINT CLOUD</text><text x="33" y="76" font-size="12" fill="#53647b">Positions</text>
+<circle cx="72" cy="116.0" r="3.5" fill="#207bc5"/>
+<circle cx="101" cy="121.0" r="3.5" fill="#207bc5"/>
+<circle cx="130" cy="121.5" r="3.5" fill="#207bc5"/>
+<circle cx="159" cy="116.8" r="3.5" fill="#207bc5"/>
+<circle cx="188" cy="111.5" r="3.5" fill="#207bc5"/>
+<circle cx="217" cy="110.2" r="3.5" fill="#207bc5"/>
+<circle cx="79" cy="145.0" r="3.5" fill="#207bc5"/>
+<circle cx="108" cy="150.0" r="3.5" fill="#207bc5"/>
+<circle cx="137" cy="150.5" r="3.5" fill="#207bc5"/>
+<circle cx="166" cy="145.8" r="3.5" fill="#207bc5"/>
+<circle cx="195" cy="140.5" r="3.5" fill="#207bc5"/>
+<circle cx="224" cy="139.2" r="3.5" fill="#207bc5"/>
+<circle cx="72" cy="174.0" r="3.5" fill="#207bc5"/>
+<circle cx="101" cy="179.0" r="3.5" fill="#207bc5"/>
+<circle cx="130" cy="179.5" r="3.5" fill="#207bc5"/>
+<circle cx="159" cy="174.8" r="3.5" fill="#207bc5"/>
+<circle cx="188" cy="169.5" r="3.5" fill="#207bc5"/>
+<circle cx="217" cy="168.2" r="3.5" fill="#207bc5"/>
+<circle cx="79" cy="203.0" r="3.5" fill="#207bc5"/>
+<circle cx="108" cy="208.0" r="3.5" fill="#207bc5"/>
+<circle cx="137" cy="208.5" r="3.5" fill="#207bc5"/>
+<circle cx="166" cy="203.8" r="3.5" fill="#207bc5"/>
+<circle cx="195" cy="198.5" r="3.5" fill="#207bc5"/>
+<circle cx="224" cy="197.2" r="3.5" fill="#207bc5"/>
+<circle cx="72" cy="232.0" r="3.5" fill="#207bc5"/>
+<circle cx="101" cy="237.0" r="3.5" fill="#207bc5"/>
+<circle cx="130" cy="237.5" r="3.5" fill="#207bc5"/>
+<circle cx="159" cy="232.8" r="3.5" fill="#207bc5"/>
+<circle cx="188" cy="227.5" r="3.5" fill="#207bc5"/>
+<circle cx="217" cy="226.2" r="3.5" fill="#207bc5"/>
+<rect x="315" y="15" width="270" height="290" rx="12" fill="white" stroke="#dfe5ee"/><text x="333" y="49" font-size="17" font-weight="bold">MESH</text><text x="333" y="76" font-size="12" fill="#53647b">Vertices + faces</text>
+<path d="M372,116.0 L401,121.0 L379,145.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M401,121.0 L430,121.5 L408,150.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M430,121.5 L459,116.8 L437,150.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M459,116.8 L488,111.5 L466,145.8 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M488,111.5 L517,110.2 L495,140.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M379,145.0 L408,150.0 L372,174.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M408,150.0 L437,150.5 L401,179.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M437,150.5 L466,145.8 L430,179.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M466,145.8 L495,140.5 L459,174.8 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M495,140.5 L524,139.2 L488,169.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M372,174.0 L401,179.0 L379,203.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M401,179.0 L430,179.5 L408,208.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M430,179.5 L459,174.8 L437,208.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M459,174.8 L488,169.5 L466,203.8 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M488,169.5 L517,168.2 L495,198.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M379,203.0 L408,208.0 L372,232.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M408,208.0 L437,208.5 L401,237.0 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M437,208.5 L466,203.8 L430,237.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M466,203.8 L495,198.5 L459,232.8 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<path d="M495,198.5 L524,197.2 L488,227.5 Z" stroke="#207bc5" stroke-width="1.2" fill="#d8edfc"/>
+<rect x="615" y="15" width="270" height="290" rx="12" fill="white" stroke="#dfe5ee"/><text x="633" y="49" font-size="17" font-weight="bold">3D GAUSSIANS</text><text x="633" y="76" font-size="12" fill="#53647b">Position + shape + appearance</text>
+<ellipse cx="672" cy="116.0" rx="22" ry="12" transform="rotate(0 672 116.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="701" cy="121.0" rx="22" ry="12" transform="rotate(13 701 121.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="730" cy="121.5" rx="22" ry="12" transform="rotate(26 730 121.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="759" cy="116.8" rx="22" ry="12" transform="rotate(39 759 116.8)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="788" cy="111.5" rx="22" ry="12" transform="rotate(52 788 111.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="817" cy="110.2" rx="22" ry="12" transform="rotate(65 817 110.2)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="679" cy="145.0" rx="22" ry="12" transform="rotate(-9 679 145.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="708" cy="150.0" rx="22" ry="12" transform="rotate(4 708 150.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="737" cy="150.5" rx="22" ry="12" transform="rotate(17 737 150.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="766" cy="145.8" rx="22" ry="12" transform="rotate(30 766 145.8)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="795" cy="140.5" rx="22" ry="12" transform="rotate(43 795 140.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="824" cy="139.2" rx="22" ry="12" transform="rotate(56 824 139.2)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="672" cy="174.0" rx="22" ry="12" transform="rotate(-18 672 174.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="701" cy="179.0" rx="22" ry="12" transform="rotate(-5 701 179.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="730" cy="179.5" rx="22" ry="12" transform="rotate(8 730 179.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="759" cy="174.8" rx="22" ry="12" transform="rotate(21 759 174.8)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="788" cy="169.5" rx="22" ry="12" transform="rotate(34 788 169.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="817" cy="168.2" rx="22" ry="12" transform="rotate(47 817 168.2)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="679" cy="203.0" rx="22" ry="12" transform="rotate(-27 679 203.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="708" cy="208.0" rx="22" ry="12" transform="rotate(-14 708 208.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="737" cy="208.5" rx="22" ry="12" transform="rotate(-1 737 208.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="766" cy="203.8" rx="22" ry="12" transform="rotate(12 766 203.8)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="795" cy="198.5" rx="22" ry="12" transform="rotate(25 795 198.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="824" cy="197.2" rx="22" ry="12" transform="rotate(38 824 197.2)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="672" cy="232.0" rx="22" ry="12" transform="rotate(-36 672 232.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="701" cy="237.0" rx="22" ry="12" transform="rotate(-23 701 237.0)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="730" cy="237.5" rx="22" ry="12" transform="rotate(-10 730 237.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="759" cy="232.8" rx="22" ry="12" transform="rotate(3 759 232.8)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="788" cy="227.5" rx="22" ry="12" transform="rotate(16 788 227.5)" fill="#337ec0" opacity=".22"/>
+<ellipse cx="817" cy="226.2" rx="22" ry="12" transform="rotate(29 817 226.2)" fill="#337ec0" opacity=".22"/>
+<rect x="915" y="15" width="270" height="290" rx="12" fill="white" stroke="#dfe5ee"/><text x="933" y="49" font-size="17" font-weight="bold">DYNAMIC GAUSSIANS</text><text x="933" y="76" font-size="12" fill="#53647b">Geometry + time</text>
+<ellipse cx="972" cy="178.0" rx="25" ry="40" transform="rotate(-20 972 178.0)" fill="#5370cf" opacity=".18"/>
+<ellipse cx="975" cy="184.0" rx="25" ry="40" transform="rotate(-20 972 178.0)" fill="#5370cf" opacity=".18"/>
+<ellipse cx="978" cy="190.0" rx="25" ry="40" transform="rotate(-20 972 178.0)" fill="#5370cf" opacity=".18"/>
+<text x="962" y="245" font-size="14">t0</text>
+<path d="M1002,190 h17 l-5,-4 m5,4 l-5,4" fill="none" stroke="#788ba7"/>
+<ellipse cx="1045" cy="161.17058030384206" rx="25" ry="40" transform="rotate(5 1045 161.17058030384206)" fill="#5370cf" opacity=".18"/>
+<ellipse cx="1048" cy="167.17058030384206" rx="25" ry="40" transform="rotate(5 1045 161.17058030384206)" fill="#5370cf" opacity=".18"/>
+<ellipse cx="1051" cy="173.17058030384206" rx="25" ry="40" transform="rotate(5 1045 161.17058030384206)" fill="#5370cf" opacity=".18"/>
+<text x="1035" y="245" font-size="14">t1</text>
+<path d="M1075,190 h17 l-5,-4 m5,4 l-5,4" fill="none" stroke="#788ba7"/>
+<ellipse cx="1118" cy="159.81405146348635" rx="25" ry="40" transform="rotate(30 1118 159.81405146348635)" fill="#5370cf" opacity=".18"/>
+<ellipse cx="1121" cy="165.81405146348635" rx="25" ry="40" transform="rotate(30 1118 159.81405146348635)" fill="#5370cf" opacity=".18"/>
+<ellipse cx="1124" cy="171.81405146348635" rx="25" ry="40" transform="rotate(30 1118 159.81405146348635)" fill="#5370cf" opacity=".18"/>
+<text x="1108" y="245" font-size="14">t2</text>
+</g><text x="25" y="322" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Conceptual illustration only — no reconstructed or simulated measurements</text></svg>
